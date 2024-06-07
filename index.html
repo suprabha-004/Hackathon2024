@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Budget Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#expenses">Expenses</a></li>
+                <li><a href="#budget">Budget</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#spin-the-wheel">Spin the Wheel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard" class="content">
+            <h2>Dashboard</h2>
+            <div class="summary">
+                <div class="card">
+                    <h3>Income</h3>
+                    <p>$<span id="incomeAmount">0</span></p>
+                </div>
+                <div class="card">
+                    <h3>Expenses</h3>
+                    <p>$<span id="expenseAmount">0</span></p>
+                </div>
+                <div class="card">
+                    <h3>Savings</h3>
+                    <p>$<span id="savingsAmount">0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="expenses" class="content">
+            <h2>Track Expenses</h2>
+            <form id="expenseForm">
+                <input type="text" id="expenseName" placeholder="Expense Name" required>
+                <input type="number" id="expenseAmountInput" placeholder="Amount" required>
+                <button type="submit">Add Expense</button>
+            </form>
+            <ul id="expenseList"></ul>
+        </section>
+
+        <section id="budget" class="content">
+            <h2>Set Budget</h2>
+            <form id="budgetForm">
+                <input type="number" id="budgetAmount" placeholder="Monthly Budget" required>
+                <button type="submit">Set Budget</button>
+            </form>
+            <p>Current Budget: $<span id="currentBudget">0</span></p>
+        </section>
+
+        <section id="goals" class="content">
+            <h2>Financial Goals</h2>
+            <form id="goalForm">
+                <input type="text" id="goalName" placeholder="Goal Name" required>
+                <input type="number" id="goalAmount" placeholder="Goal Amount" required>
+                <button type="submit">Add Goal</button>
+            </form>
+            <ul id="goalList"></ul>
+        </section>
+
+        <section id="profile" class="content">
+            <h2>User Profile</h2>
+            <form id="profileForm">
+                <input type="text" id="userName" placeholder="Name" required>
+                <select id="ageGroup" required>
+                    <option value="" disabled selected>Select Age Group</option>
+                    <option value="child">Child</option>
+                    <option value="teen">Teenager</option>
+                    <option value="adult">Adult</option>
+                    <option value="senior">Senior</option>
+                </select>
+                <button type="submit">Save Profile</button>
+            </form>
+            <p id="profileInfo"></p>
+        </section>
+
+        <section id="spin-the-wheel" class="content">
+            <h2>Spin the Wheel</h2>
+            <div id="wheel-container">
+                <canvas id="wheelCanvas" width="300" height="300"></canvas>
+                <button id="spinButton">Spin</button>
+            </div>
+            <p id="wheelResult"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Budget Tracker</p>
+    </footer>
+
+    <script src="jit.js"></script>
+</body>
+</html>
