@@ -1,34 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spin the Wheel</title>
-    <link rel="stylesheet" href="styl.css">
-    <style>
-        #wheelCanvas {
-            border: 2px solid #000;
-            display: block;
-            margin: 0 auto;
-        }
-        #spinButton {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        #prize {
-            text-align: center;
-            font-size: 20px;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="form.js"></script>
 </head>
 <body>
-    <canvas id="wheelCanvas" width="500" height="500"></canvas>
-    <button id="spinButton">Spin</button>
-    <div id="prize"></div>
+    <form name="Form" onsubmit="return validateForm()">
+        <h2>Registration Form</h2>
+        <div class="box">
+            <label>Full Name</label>
+            <input type="text" name="name" id="name">
+            <div class="error" id="nameErr"></div>
+        </div>
+        <div class="box">
+            <label>Email Address</label>
+            <input type="text" name="email" id="email">
+            <div class="error" id="emailErr"></div>
+        </div>
+        <div class="box">
+            <label>Mobile Number</label>
+            <input type="text" name="mobile" maxlength="10" id="mobile">
+            <div class="error" id="mobileErr"></div>
+        </div>
+        <div class="box">
+            <label>Country</label>
+            <select name="country" id="country">
+                <option>Select</option>
+                <option>London</option>
+                <option>India</option>
+                <option>America</option>
+            </select> 
+            <div class="error" id="countryErr"></div>
+        </div>
+        <div class="box">
+            <label>Gender</label>
+            <div class="form-inline" id="gender">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label> 
+            </div>
+            <div class="error" id="genderErr"></div>
+        </div>
+        <div class="box">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
 
-    <script src="wheel.js"></script>
+    <div id="spinner" class="spinner" style="display:none;">
+        <img src="path_to_spinner_image.gif" alt="Loading...">
+    </div>
 </body>
 </html>
